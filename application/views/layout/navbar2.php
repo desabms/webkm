@@ -77,7 +77,7 @@
                             <a href="#" class="dropdown-item">Profile</a>
                             <a href="#" class="dropdown-item">Settings</a>
                             <div class="dropdown-divider"></div>
-                            <a href="#"class="dropdown-item">Logout</a>
+                            <a href="<?php echo base_url('auth/Login/logout'); ?>"class="dropdown-item">Logout</a>
                     </div>
                   </li>
               </ul>

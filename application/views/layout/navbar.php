@@ -53,8 +53,8 @@
             </li>
           </ul>
           <div class="gap-3">
-            <a class="btn btn-default btn-no-fill daf" href="#">Daftar</a>
-            <a class="btn btn-fill text-white border-0" href="#">Masuk</a>
+            <a class="btn btn-default btn-no-fill daf" href="auth/Registrasi">Daftar</a>
+            <a class="btn btn-fill text-white border-0" href="<?php echo base_url('auth/Login');?>">Masuk</a>
           </div>
         </div>
       </nav>

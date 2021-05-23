@@ -36,14 +36,15 @@ class Registrasi extends CI_Controller{
             $email = $this->input->post('email');
             $phone = $this->input->post('phone');
             $jk = $this->input->post('jk');
-            $password = MD5($this->input->post('password'));
+            $password = $this->input->post('password');
+            $pass = password_hash($password, PASSWORD_DEFAULT);
             $data = [
                 'nama' => $nama,
                 'username' => $username,
                 'email' => $email,
                 'handphone' => $phone,
                 'jenis_kelamin' => $jk,
-                'password' => $password
+                'password' => $pass
             ];
             $insert = $this->Auth_model->register("users",$data);
             if($insert){

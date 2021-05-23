@@ -1,4 +1,20 @@
 <!-- Navbar-->
+
+            <?php
+                $errors = $this->session->flashdata('errors');
+                if(!empty($errors)){
+                ?>
+                <div class="row">
+                    <div class="col-md-12">
+                    <div class="alert alert-danger text-center">
+                        <?php foreach($errors as $key=>$error){ ?>
+                        <?php echo "$error<br>"; ?>
+                        <?php } ?>
+                    </div>
+                    </div>
+                </div>
+            <?php } ?>
+
 <div class="container">
 <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light py-3">
@@ -26,7 +42,7 @@
 
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-5 ml-5">
-            <form action="#">
+            <form action="<?php echo base_url('auth/Login/proses_login'); ?>" method="post" enctype="multipart/form-data">
                 <div class="row">
 
                     <!-- Email Address -->
@@ -51,9 +67,9 @@
 
                     <!-- Submit Button -->
                     <div class="form-group col-lg-12 mx-auto mb-0">
-                        <a href="#" class="btn btn-primary btn-block py-2">
+                        <Button type="submit" class="btn btn-primary btn-block py-2">
                             <span class="font-weight-bold">Masuk</span>
-                        </a>
+                        </Button>
                     </div>
    
                     <!-- Already Registered -->

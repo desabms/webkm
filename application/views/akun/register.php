@@ -42,7 +42,7 @@
 
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-6 ml-auto">
-            <form action="<?php echo base_url('index.php/auth/Registrasi/proses_daftar'); ?>" method="post">
+            <form action="<?php echo base_url('auth/Registrasi/proses_daftar'); ?>" method="post">
                 <div class="row">
 
                     <!-- First Name -->
@@ -130,7 +130,7 @@
 
                     <!-- Already Registered -->
                     <div class="text-center w-100">
-                        <p class="text-muted font-weight-bold">Sudah Punya Akun? <a href="<?php echo base_url('index.php/auth/Login'); ?>" class="text-primary ml-2">Login</a></p>
+                        <p class="text-muted font-weight-bold">Sudah Punya Akun? <a href="<?php echo base_url('auth/Login'); ?>" class="text-primary ml-2">Login</a></p>
                     </div>
 
                 </div>
