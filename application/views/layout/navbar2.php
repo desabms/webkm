@@ -1,57 +1,88 @@
 <section class="h-70 w-70" style="box-sizing: border-box; background-color: #391484">
-<nav class="navbar-1-3 navbar navbar-expand-lg navbar-dark p-4 px-md-4 mb-3 bg-purple main-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <!-- <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-              d="M3.5 15.75C3.5 8.98451 8.98451 3.5 15.75 3.5H29.75C30.7165 3.5 31.5 4.2835 31.5 5.25C31.5 6.21649 30.7165 7 29.75 7H15.75C10.9175 7 7 10.9175 7 15.75V29.75C7 30.7165 6.2165 31.5 5.25 31.5C4.2835 31.5 3.5 30.7165 3.5 29.75V15.75Z"
-              fill="white" />
-            <path
-              d="M10.5 17.5C10.5 13.634 13.634 10.5 17.5 10.5H31.5C35.366 10.5 38.5 13.634 38.5 17.5V31.5C38.5 35.366 35.366 38.5 31.5 38.5H17.5C13.634 38.5 10.5 35.366 10.5 31.5V17.5Z"
-              fill="white" />
-          </svg> -->
-           <img src="<?php echo base_url();?>assets/images/logoss.png" alt="Dapodes">
-           </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+<div class="container-xxl mx-auto p-0  position-relative header-2-3" style="font-family: 'Poppins', sans-serif;">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a href="#">
+          <img src="<?php echo base_url();?>assets/images/logoss.png" alt="Dapodes">
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="modal" data-bs-target="#targetModal-item">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link px-md-4 active" aria-current="page" href="#">Laporan</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-md-4" href="#">UMKM</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-md-4" href="#">Histori</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-md-4" href="#">Tentang Kami</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link px-md-4" href="#">Kontak</a>
-            </li>
-            
-          </ul>
-          <!-- <div class="d-flex"> -->
-          <ul>
-              <li class="nav-item dropdown">
-                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                        <img alt="image" src="<?= base_url() ?>/assets/images/avatar-1.png" class="rounded-circle mr-1" style="width: 60px; height: 60px">
-                        <div class="d-sm-none d-lg-inline-block">Admin</div>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a href="#" class="dropdown-item">Profile</a>
-                        <a href="#" class="dropdown-item">Settings</a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#"class="dropdown-item">Logout</a>
-                </div>
-              </li>
-          </ul>
-          <!-- </div> -->
+
+        <div class="modal-item modal fade" id="targetModal-item" tabindex="-1" role="dialog"
+          aria-labelledby="targetModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content border-0" style="background-color: #141432;">
+              <div class="modal-header border-0" style="padding:	2rem; padding-bottom: 0;">
+                <a class="modal-title" id="targetModalLabel">
+                   <img src="<?php echo base_url();?>assets/images/logoss.png" alt="Dapodes">
+                </a>
+                <button type="button" class="close btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body" style="padding:	2rem; padding-top: 0; padding-bottom: 0;">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link px-md-4 active" aria-current="page" href="#">Laporan</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-md-4" href="#">UMKM</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-md-4" href="#">Histori</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-md-4" href="#">Tentang Kami</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-md-4" href="#">Kontak</a>
+                </li>
+                
+              </ul>
+              </div>
+              <div class="modal-footer border-0 gap-3" style="padding:	2rem; padding-top: 0.75rem">
+                <a href="https://www.google.com"class="btn btn-default btn-no-fill daf">Daftar</a>
+                <a href=""class="btn btn-fill border-0 text-white">Masuk</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </nav>
-      </section>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link px-md-4 " aria-current="page" href="#">Laporan</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-md-4" href="#">UMKM</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-md-4" href="#">Histori</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-md-4" href="#">Tentang Kami</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link px-md-4" href="#">Kontak</a>
+                </li>
+                
+          </ul>
+          <div class="gap-3">
+            <ul>
+                  <li class="nav-item dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <img alt="image" src="<?= base_url() ?>/assets/images/avatar-1.png" class="rounded-circle mr-1" style="width: 60px; height: 60px">
+                            <div class="d-sm-none d-lg-inline-block"></div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="#" class="dropdown-item">Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#"class="dropdown-item">Logout</a>
+                    </div>
+                  </li>
+              </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+</section>

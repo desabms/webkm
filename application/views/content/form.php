@@ -12,7 +12,7 @@
 
                     <form class="form needs-validation" action="<?php base_url(); ?>Pendaftaran/Proses_daftar" method="POST">
                         <div class="form-group row">
-                            <label class="col-lg-3 col-form-label rounded form-control-label font-monospace">Daftar TK/SD</label>
+                            <label class="col-lg-3 col-form-label rounded form-control-label font-monospace">NIK</label>
                             <div class="col-lg-9">
                                 <input type="number" class="form-control rounded" name="nik" placeholder="16 Digit NIK Anda" required="">
                             </div>

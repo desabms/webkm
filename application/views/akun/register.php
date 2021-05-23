@@ -1,4 +1,20 @@
 <!-- Navbar-->
+
+            <?php
+                $errors = $this->session->flashdata('errors');
+                if(!empty($errors)){
+                ?>
+                <div class="row">
+                    <div class="col-md-12">
+                    <div class="alert alert-danger text-center">
+                        <?php foreach($errors as $key=>$error){ ?>
+                        <?php echo "$error<br>"; ?>
+                        <?php } ?>
+                    </div>
+                    </div>
+                </div>
+            <?php } ?>
+
 <div class="container">
 <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light py-3">
@@ -16,7 +32,7 @@
     <div class="row py-5 mt-4 align-items-center">
         <!-- For Demo Purpose -->
         <div class="col-md-5 pr-lg-5 mb-5 mb-md-0 text-center">
-            <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
+            <img src="<?php echo base_url();?>assets/images/img_4.png" alt="" class="img-fluid mb-3 d-none d-md-block">
             <h1>Buat Akun</h1>
             <p class="font-italic text-muted mb-0">Buatlah Akunmu Sekarang!.</p>
             <!-- <p class="font-italic text-muted">Snippet By <a href="https://bootstrapious.com" class="text-muted">
@@ -26,7 +42,7 @@
 
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-6 ml-auto">
-            <form action="#">
+            <form action="<?php echo base_url('index.php/auth/Registrasi/proses_daftar'); ?>" method="post">
                 <div class="row">
 
                     <!-- First Name -->
@@ -36,7 +52,7 @@
                                 <i class="fa fa-user text-muted"></i>
                             </span>
                         </div>
-                        <input id="firstName" type="text" name="firstname" placeholder="First Name" class="form-control bg-white border-left-0 border-md">
+                        <input id="nama" type="text" name="nama" placeholder="Nama lengkap" class="form-control bg-white border-left-0 border-md">
                     </div>
 
                     <!-- Last Name -->
@@ -46,7 +62,7 @@
                                 <i class="fa fa-user text-muted"></i>
                             </span>
                         </div>
-                        <input id="lastName" type="text" name="lastname" placeholder="Last Name" class="form-control bg-white border-left-0 border-md">
+                        <input id="username" type="text" name="username" placeholder="username" class="form-control bg-white border-left-0 border-md">
                     </div>
 
                     <!-- Email Address -->
@@ -56,7 +72,7 @@
                                 <i class="fa fa-envelope text-muted"></i>
                             </span>
                         </div>
-                        <input id="email" type="email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md">
+                        <input id="email" type="email" name="email" placeholder="Email" class="form-control bg-white border-left-0 border-md">
                     </div>
 
                     <!-- Phone Number -->
@@ -66,13 +82,7 @@
                                 <i class="fa fa-phone-square text-muted"></i>
                             </span>
                         </div>
-                        <select id="countryCode" name="countryCode" style="max-width: 80px" class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
-                            <option value="">+12</option>
-                            <option value="">+10</option>
-                            <option value="">+15</option>
-                            <option value="">+18</option>
-                        </select>
-                        <input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3">
+                        <input id="phoneNumber" type="tel" name="phone" placeholder="Nomor Hanphone" class="form-control bg-white border-md border-left-0 pl-3" pattern="[0-9]{12}" required>
                     </div>.
 
 
@@ -83,15 +93,14 @@
                                 <i class="fa fa-black-tie text-muted"></i>
                             </span>
                         </div>
-                        <select id="job" name="jobtitle" class="form-control custom-select bg-white border-left-0 border-md">
-                            <option value="">Choose your job</option>
-                            <option value="">Designer</option>
-                            <option value="">Developer</option>
-                            <option value="">Manager</option>
-                            <option value="">Accountant</option>
+                        <select id="job" name="jk" class="form-control custom-select bg-white border-left-0 border-md" >
+                            <option value="">Jenis Kelamin</option>
+                            <option value="Laki-Laki">Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                            
                         </select>
                     </div>
-
+                    
                     <!-- Password -->
                     <div class="input-group col-lg-6 mb-4">
                         <div class="input-group-prepend">
@@ -114,14 +123,14 @@
 
                     <!-- Submit Button -->
                     <div class="form-group col-lg-12 mx-auto mb-0">
-                        <a href="#" class="btn btn-primary btn-block py-2">
-                            <span class="font-weight-bold">Create your account</span>
-                        </a>
+                        <Button type="submit" class="btn btn-primary btn-block py-2">
+                            <span class="font-weight-bold">Daftar</span>
+                        </Button>
                     </div>
 
                     <!-- Already Registered -->
                     <div class="text-center w-100">
-                        <p class="text-muted font-weight-bold">Already Registered? <a href="#" class="text-primary ml-2">Login</a></p>
+                        <p class="text-muted font-weight-bold">Sudah Punya Akun? <a href="<?php echo base_url('index.php/auth/Login'); ?>" class="text-primary ml-2">Login</a></p>
                     </div>
 
                 </div>
