@@ -28,8 +28,9 @@
                             <div class="col-lg-9">
                                 <select class="custom-select" name="Bu" id="inputGroupSelect01" required="">
                                     <option value"">--Pilih Salah Satu--</option>
-                                    <option value="Laki-Laki">Laki-Laki</option>
-                                    <option value="Perempuan">Perempuan</option>
+                                    <?php foreach ($bu as $row) : ?>
+                                        <option value="<?php echo $row->kd_bidangusaha; ?>"><?php echo $row->nama_bidangusaha; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>
@@ -38,8 +39,8 @@
                             <div class="col-lg-9">
                                 <select class="custom-select" name="agama" id="inputGroupSelect01" required="">
                                     <option value="">--Pilih Salah Satu--</option>
-                                    <?php foreach ($dagama as $row) : ?>
-                                        <option value="<?php echo $row->kdAgama; ?>"><?php echo $row->nAgama; ?></option>
+                                    <?php foreach ($tu as $row) : ?>
+                                        <option value="<?php echo $row->kd_tipeusaha; ?>"><?php echo $row->nama_tipeusaha; ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
