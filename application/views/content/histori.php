@@ -27,7 +27,7 @@
                         </tbody>
                     </table>
                 </div>
-                <a href="#" class="btn btn-primary">Detail</a>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal-detail<?php echo $row->idl ?>">Detail</a>
             </div>
             </div>
         </div>
@@ -43,3 +43,56 @@
         </div> -->
     </div>
 </div>
+
+
+<!-- Modal Histori -->
+
+<?php foreach ($laporan as $key => $v) : ?>
+<div class="modal fade" id="modal-detail<?php echo $v->idl ?>">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Data UMKM</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body table-responsive">
+        <table class="table table-bordered margin">
+          <tbody>
+            <tr>
+              <th>Nama</th>
+              <td><span id="nama"><?php echo $v->nama_usaha ?></span></td>
+            </tr>
+            <tr>
+              <th>NIK</th>
+              <td><span id="nama"><?php echo $v->nik ?></span></td>
+            </tr>
+            <tr>
+              <th>Jenis Usaha</th>
+              <td><span id="nama"><?php echo $v->bidang_usaha ?></span></td>
+            </tr>
+            <tr>
+              <th>Tipe Usaha</th>
+              <td><span id="nama"><?php echo $v->tipe_usaha ?></span></td>
+            </tr>
+            <tr>
+              <th>Pendapatan</th>
+              <td><span id="nama"><?php echo $v->pendapatan ?></span></td>
+            </tr>
+            <tr>
+              <th>Tanggal Lapor</th>
+              <td><span id="nama"><?php echo date('d-m-Y', strtotime($v->terlapor))?></span></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+<?php endforeach; ?>

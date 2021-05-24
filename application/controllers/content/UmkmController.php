@@ -79,4 +79,10 @@ class UmkmController extends CI_Controller{
             }
         }
     }
+    
+    public function detail($id){
+        $data = $this->Umkm_model->getData_id('id',$id);
+        // echo json_encode($data);
+        // var_dump($data);
+     }
 }

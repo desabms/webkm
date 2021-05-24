@@ -65,13 +65,7 @@ class Umkm_model extends CI_Model{
     }
 
     function get_umkm(){
-        $this->db->SELECT('umkm.id, pemilik.nama as nama,
-            pemilik.nik as nik,
-            umkm.nama_usaha as nama_usaha,
-            umkm.modal_awal as modal, umkm.alamat_usaha as alamat,
-            umkm.handphone as handphone, umkm.tgl_lapor as tgl_lapor,
-            bidangusaha.nama_bidangusaha as bidangusaha,
-            tipeusaha.nama_tipeusaha as tipeusaha,
+        $this->db->SELECT('*
             ');
             $this->db->FROM('umkm');
             $this->db->JOIN('pemilik','umkm.nik = pemilik.nik','left');
@@ -80,6 +74,18 @@ class Umkm_model extends CI_Model{
 
             $query = $this->db->get();
             return $query->result();
+    }
+
+    public function getData_id($id){
+        $this->db->SELECT('*');
+        $this->db->FROM('umkm');
+        $this->db->JOIN('pemilik','umkm.nik = pemilik.nik','left');
+        $this->db->JOIN('bidangusaha','umkm.kd_bidangusaha = bidangusaha.kd_bidangusaha','left');
+        $this->db->WHERE('id',$id);
+
+        $query = $this->db->get();
+        return  $query->result();
+
     }
 
 }
