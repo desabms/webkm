@@ -42,14 +42,12 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo">
           <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+            
             <li class="nav-item active">
-              <a class="nav-link" href="#" style="color: #E7E7E8;">Home</a>
+              <a class="nav-link" href="<?php echo base_url();?>">Tentang Kami</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Tentang Kami</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Kontak</a>
+              <a class="nav-link" href="<?php echo base_url();?>kontak">Kontak</a>
             </li>
           </ul>
           <div class="gap-3">

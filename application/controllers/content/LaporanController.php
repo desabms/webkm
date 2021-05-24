@@ -13,6 +13,7 @@ class LaporanController extends CI_Controller{
 
     function index(){
         $data['bu'] = $this->Umkm_model->cek_bu();
+        $data['um'] = $this->Umkm_model->cek_umkm();
         $data['tu'] = $this->Umkm_model->cek_tu();
         $this->load->view('layout/header');
 		$this->load->view('layout/navbar2');
@@ -51,15 +52,10 @@ class LaporanController extends CI_Controller{
             
 
             if ($cek_nik == false) {
-                $this->session->set_flashdata('nik', "Password saat ini tidak sama dengan yang ada!");
+                $this->session->set_flashdata('nik', "NIK tidak terdaftar!");
                 redirect('content/LaporanController');
             } else {
-                $cek_nama = $this->Umkm_model->cek_nama($nama);
-                if ($cek_nama == false){
-                    $this->session->set_flashdata('nama', "Nama Usaha saat ini tidak sama dengan yang ada! <Button class='btn btn-sm'>daftar</Button>");
-                    redirect('content/LaporanController');
-                }else{
-                    $data =[
+                $data =[
                         'nik' => $nik,
                         'id_umkm' => $nama,
                         'kd_bidangusaha' => $bu,
@@ -68,15 +64,14 @@ class LaporanController extends CI_Controller{
                         'pendapatan' => $pendapatan
                     ];
 
-                    $save = $this->Umkm_model->save_laporan('laporan',$data);
+                    $save = $this->Umkm_model->save_laporan($data);
 
                     if ($save) {
-                        redirect('content/hitori');
+                        redirect('content/HistoriController');
                     }else{
                         $this->session->set_flashdata('err', "Password saat ini tidak sama dengan yang ada!");
                         redirect('content/LaporanController');
                     }
-                }
             }
         }
 

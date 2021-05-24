@@ -36,7 +36,13 @@
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Nama Usaha</label>
                             <div class="col-lg-9">
-                                <input class="form-control rounded" type="text" name="nama" placeholder="Nama Usaha Anda" required="">
+                                <!-- <input class="form-control rounded" type="text" name="nama" placeholder="Nama Usaha Anda" required=""> -->
+                                <select class="custom-select" name="nama" id="inputGroupSelect01" required="">
+                                    <option value"">--Pilih Salah Satu--</option>
+                                    <?php foreach ($um as $row) : ?>
+                                        <option value="<?php echo $row->id; ?>"><?php echo $row->nama_usaha; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                                 <?php echo $this->session->flashdata('nama'); ?>
                             </div>
                         </div>

@@ -12,6 +12,14 @@ class UmkmController extends CI_Controller{
     }
 
     function index(){
+        $data['umkm'] = $this->Umkm_model->get_umkm();
+        $this->load->view('layout/header');
+		$this->load->view('layout/navbar2');
+		$this->load->view('content/umkm',$data);
+		$this->load->view('layout/footer');
+    }
+
+    function get_form(){
         $data['bu'] = $this->Umkm_model->cek_bu();
         $data['tu'] = $this->Umkm_model->cek_tu();
         $this->load->view('layout/header');
@@ -52,14 +60,14 @@ class UmkmController extends CI_Controller{
                 $data = [
                     'nik' => $nik,
                     'nama_usaha' => $nama,
-                    'kd_bidangusaha' => $kd_bidangusaha,
-                    'kd_tipeusaha' => $kd_tipeusaha,
+                    'kd_bidangusaha' => $bu,
+                    'kd_tipeusaha' => $tu,
                     'modal_awal' => $modal,
                     'alamat_usaha' => $alamat,
                     'handphone' => $tlpn,
                     'tgl_lapor' => $tgllapor
                 ];
-                print_r($data);
+                // print_r($data);
 
                 $insert = $this->Umkm_model->save_data('umkm',$data);
                 if ($insert) {

@@ -11,6 +11,10 @@ class Umkm_model extends CI_Model{
         $data = $this->db->query("SELECT * from bidangusaha");
         return $data->result();
     }
+    function cek_umkm(){
+        $data = $this->db->query("SELECT * from umkm");
+        return $data->result();
+    }
     
     function cek_nik($nik){
         $query = $this->db->query("SELECT * FROM pemilik WHERE nik='$nik' LIMIT 1");
@@ -23,7 +27,7 @@ class Umkm_model extends CI_Model{
     }
 
     function cek_nama($nama){
-        $query = $this->db->query("SELECT * FROM umkm WHERE nama_usaha='$nama' LIMIT 1");
+        $query = $this->db->query("SELECT id FROM umkm WHERE nama_usaha='$nama' LIMIT 1");
             // $hasil = $this->db->where('nik', $nik)->limit(1)->get('pemilik');
         if($query->num_rows() > 0){
             return $query->result_array();
@@ -32,8 +36,9 @@ class Umkm_model extends CI_Model{
         }
     }
 
-    function save_laporan($table, $data){
-       return $this->db->insert($table, $data);
+    function save_laporan($data){
+       $this->db->insert('laporan',$data);
+       return $this->db->insert_id();
     }
     function save_data($table, $data){
        return $this->db->insert($table, $data);
@@ -57,6 +62,24 @@ class Umkm_model extends CI_Model{
 
             $query = $this->db->get();
             return  $query->result();
+    }
+
+    function get_umkm(){
+        $this->db->SELECT('umkm.id, pemilik.nama as nama,
+            pemilik.nik as nik,
+            umkm.nama_usaha as nama_usaha,
+            umkm.modal_awal as modal, umkm.alamat_usaha as alamat,
+            umkm.handphone as handphone, umkm.tgl_lapor as tgl_lapor,
+            bidangusaha.nama_bidangusaha as bidangusaha,
+            tipeusaha.nama_tipeusaha as tipeusaha,
+            ');
+            $this->db->FROM('umkm');
+            $this->db->JOIN('pemilik','umkm.nik = pemilik.nik','left');
+            $this->db->JOIN('bidangusaha','umkm.kd_bidangusaha = bidangusaha.kd_bidangusaha','left');
+            $this->db->JOIN('tipeusaha','umkm.kd_tipeusaha = tipeusaha.kd_tipeusaha','left');
+
+            $query = $this->db->get();
+            return $query->result();
     }
 
 }
