@@ -50,13 +50,13 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link px-md-4 " aria-current="page" href="#">Laporan</a>
+                  <a class="nav-link px-md-4 " aria-current="page" href="<?php echo base_url('content/LaporanController');?>">Laporan</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link px-md-4" href="#">UMKM</a>
+                  <a class="nav-link px-md-4" href="<?php echo base_url('content/UmkmController')?>">UMKM</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link px-md-4" href="#">Histori</a>
+                  <a class="nav-link px-md-4" href="<?php echo base_url('content/HistoriController')?>">Histori</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link px-md-4" href="#">Tentang Kami</a>

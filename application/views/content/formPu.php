@@ -38,9 +38,11 @@
                             <div class="col-lg-9">
                                 <select class="custom-select" name="agama" id="inputGroupSelect01" required="">
                                     <option value="">--Pilih Salah Satu--</option>
-                                    <?php foreach ($dagama as $row) : ?>
-                                        <option value="<?php echo $row->kdAgama; ?>"><?php echo $row->nAgama; ?></option>
-                                    <?php endforeach; ?>
+                                    <option value="islam">Islam</option>
+                                    <option value="kristen">Kristen</option>
+                                    <option value="hindu">Hindu</option>
+                                    <option value="budha">Budha</option>
+                                    <option value="budha">Konghucu</option>
                                 </select>
                             </div>
                         </div>

@@ -11,5 +11,52 @@ class Umkm_model extends CI_Model{
         $data = $this->db->query("SELECT * from bidangusaha");
         return $data->result();
     }
+    
+    function cek_nik($nik){
+        $query = $this->db->query("SELECT * FROM pemilik WHERE nik='$nik' LIMIT 1");
+            // $hasil = $this->db->where('nik', $nik)->limit(1)->get('pemilik');
+        if($query->num_rows() > 0){
+            return $query->result_array();
+        } else {
+            return false;
+        }
+    }
+
+    function cek_nama($nama){
+        $query = $this->db->query("SELECT * FROM umkm WHERE nama_usaha='$nama' LIMIT 1");
+            // $hasil = $this->db->where('nik', $nik)->limit(1)->get('pemilik');
+        if($query->num_rows() > 0){
+            return $query->result_array();
+        } else {
+            return false;
+        }
+    }
+
+    function save_laporan($table, $data){
+       return $this->db->insert($table, $data);
+    }
+    function save_data($table, $data){
+       return $this->db->insert($table, $data);
+    }
+
+    function get_laporan(){
+        $this->db->SELECT('laporan.idl,
+            pemilik.nama as nama,
+            pemilik.nik as nik,
+            umkm.nama_usaha as nama_usaha,
+            bidangusaha.nama_bidangusaha as bidang_usaha,
+            tipeusaha.nama_tipeusaha as tipe_usaha,
+            laporan.pendapatan,
+            laporan.terlapor');
+            $this->db->FROM('laporan');
+            $this->db->JOIN('pemilik','laporan.nik = pemilik.nik','left');
+            $this->db->JOIN('umkm','laporan.id_umkm = umkm.id','left');
+            // $this->db->GROUP_BY(');
+            $this->db->JOIN('bidangusaha','laporan.kd_bidangusaha = bidangusaha.kd_bidangusaha','left');
+            $this->db->JOIN('tipeusaha','laporan.kd_tipeusaha = tipeusaha.kd_tipeusaha','left');
+
+            $query = $this->db->get();
+            return  $query->result();
+    }
 
 }
