@@ -10,7 +10,7 @@
                 </div>
                 <div class="card-body">
 
-                    <form class="form needs-validation" action="<?php base_url(); ?>Pendaftaran/Proses_daftar" method="POST">
+                    <form class="form needs-validation" action="<?php base_url(); ?>PelakuController/proses_addPelaku" method="POST">
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label rounded form-control-label font-monospace">NIK</label>
                             <div class="col-lg-9">
@@ -70,9 +70,9 @@
                             <div class="col-lg-9">
                                 <select class="custom-select" name="stts" id="inputGroupSelect01" required="">
                                     <option value="">--Pilih Salah Satu--</option>
-                                    <option value="m">Menikah</option>
-                                    <option value="c">Cerai</option>
-                                    <option value="l">Lajang</option>
+                                    <option value="menikah">Menikah</option>
+                                    <option value="cerai">Cerai</option>
+                                    <option value="lajang">Lajang</option>
                                 </select>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                                     <option value="sd">SD</option>
                                     <option value="smp">SMP</option>
                                     <option value="sma">SMA</option>
-                                    <option value="d">D3/D4</option>
+                                    <option value="d3">D3/D4</option>
                                     <option value="s1">S1</option>
                                     <option value="s2">S2</option>
                                     <option value="s3">S3</option>

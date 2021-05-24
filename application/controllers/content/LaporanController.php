@@ -52,7 +52,7 @@ class LaporanController extends CI_Controller{
             
 
             if ($cek_nik == false) {
-                $this->session->set_flashdata('nik', "NIK tidak terdaftar!");
+                $this->session->set_flashdata('errors', "NIK tidak terdaftar!");
                 redirect('content/LaporanController');
             } else {
                 $data =[
@@ -69,7 +69,7 @@ class LaporanController extends CI_Controller{
                     if ($save) {
                         redirect('content/HistoriController');
                     }else{
-                        $this->session->set_flashdata('err', "Password saat ini tidak sama dengan yang ada!");
+                        $this->session->set_flashdata('errors', "Data tidak bisa diInputkan!");
                         redirect('content/LaporanController');
                     }
             }

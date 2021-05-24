@@ -62,7 +62,7 @@
                   <a class="nav-link px-md-4" href="#">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link px-md-4" href="#">Kontak</a>
+                  <a class="nav-link px-md-4" href="<?php echo base_url('Contact')?>">Kontak</a>
                 </li>
                 
           </ul>
