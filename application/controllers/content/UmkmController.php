@@ -55,7 +55,9 @@ class UmkmController extends CI_Controller{
 
             $cek_nik = $this->Umkm_model->cek_nik($nik);
             if ($cek_nik == false) {
-                echo '<script>alert("NIK tidak tersedia.");window.location.href="'.base_url('content/PelakuController').'";</script>';
+                // echo '<script>alert("NIK tidak tersedia.");window.location.href="'.base_url('content/PelakuController').'";</script>';
+                $this->session->set_flashdata('nik', 'NIK tidak terdaftar! <a href="<php echo base_url();?>cintent/PelakuController">Daftar</a>');
+                redirect('content/UmkmController/get_form');
             }else{
                 $data = [
                     'nik' => $nik,

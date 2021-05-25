@@ -25,11 +25,12 @@
                     <h4 class="mb-0 text-center">Tambah Data UMKM</h4>
                 </div>
                 <div class="card-body">
-                    <form class="form needs-validation" action="<?php base_url(); ?>UmkmController/proses_addUMKM" method="POST">
+                    <form class="form needs-validation" action="<?php base_url(); ?>proses_addUMKM" method="POST">
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label rounded form-control-label font-monospace">NIK</label>
                             <div class="col-lg-9">
                                <input class="form-control rounded" type="number" name="nik" placeholder="16 Digit NIK Anda" required="">
+                                <?php echo $this->session->flashdata('nik'); ?>
                             </div>
                         </div>
                         <div class="form-group row">

@@ -52,7 +52,7 @@ class LaporanController extends CI_Controller{
             
 
             if ($cek_nik == false) {
-                $this->session->set_flashdata('errors', "NIK tidak terdaftar!");
+                $this->session->set_flashdata('nik', 'NIK tidak terdaftar! <a href="<php echo base_url();?>cintent/PelakuController">Daftarkan</a>');
                 redirect('content/LaporanController');
             } else {
                 $data =[
