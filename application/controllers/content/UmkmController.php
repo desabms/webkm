@@ -36,6 +36,7 @@ class UmkmController extends CI_Controller{
         $this->form_validation->set_rules('modal', 'modal', 'required');
         $this->form_validation->set_rules('alamat', 'Alamat', 'required');
         $this->form_validation->set_rules('tlpn', 'Hanphone', 'required');
+        $this->form_validation->set_rules('jmlh', 'Jumlah Karyawan', 'required');
         $this->form_validation->set_rules('tgllapor', 'Tanggal', 'required');
 
         if ($this->form_validation->run() == FALSE) {
@@ -51,12 +52,13 @@ class UmkmController extends CI_Controller{
             $modal = $this->input->post('modal');
             $alamat = $this->input->post('alamat');
             $tlpn = $this->input->post('tlpn');
+            $jmlh = $this->input->post('jmlh');
             $tgllapor = $this->input->post('tgllapor');
 
             $cek_nik = $this->Umkm_model->cek_nik($nik);
             if ($cek_nik == false) {
                 // echo '<script>alert("NIK tidak tersedia.");window.location.href="'.base_url('content/PelakuController').'";</script>';
-                $this->session->set_flashdata('nik', 'NIK tidak terdaftar! <a href="<php echo base_url();?>cintent/PelakuController">Daftar</a>');
+                $this->session->set_flashdata('nik', 'NIK tidak terdaftar! ');
                 redirect('content/UmkmController/get_form');
             }else{
                 $data = [
@@ -67,6 +69,7 @@ class UmkmController extends CI_Controller{
                     'modal_awal' => $modal,
                     'alamat_usaha' => $alamat,
                     'handphone' => $tlpn,
+                    'jumlah_karyawan' => $jmlh,
                     'tgl_lapor' => $tgllapor
                 ];
                 // print_r($data);

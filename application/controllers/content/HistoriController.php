@@ -5,10 +5,10 @@ class HistoriController extends CI_Controller{
 
     function __construct(){
         parent::__construct();
-        $this->load->model('Umkm_model');
+        $this->load->model(['Umkm_model','Bantuan_model']);
         $this->load->library('form_validation');
         $this->load->library('session');
-        $this->cek_login();
+        check_not_login();
     }
 
     function index(){
@@ -19,4 +19,16 @@ class HistoriController extends CI_Controller{
 		$this->load->view('content/histori',$data);
 		$this->load->view('layout/footer');
     }
+
+	function pengajuan(){
+		
+        
+		$data['bantu'] = $this->Bantuan_model->getData();
+		$data['title']	= 'Pengajuan Bantuan';
+
+		$this->load->view('layout/header');
+		$this->load->view('layout/navbar2');
+		$this->load->view('content/histori_bantuan',$data);
+		$this->load->view('layout/footer');
+	}
 }

@@ -18,10 +18,9 @@ class Registrasi extends CI_Controller{
 
     public function proses_daftar(){
         $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
         $this->form_validation->set_rules('phone', 'Phone', 'required');
-        $this->form_validation->set_rules('jk', 'JK', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[6]');
         $this->form_validation->set_rules('passwordConfirmation', 'PasswordConfirmation', 'required|matches[password]');
     
@@ -35,7 +34,6 @@ class Registrasi extends CI_Controller{
             $username = $this->input->post('username');
             $email = $this->input->post('email');
             $phone = $this->input->post('phone');
-            $jk = $this->input->post('jk');
             $password = $this->input->post('password');
             $pass = password_hash($password, PASSWORD_DEFAULT);
             $data = [
@@ -43,7 +41,6 @@ class Registrasi extends CI_Controller{
                 'username' => $username,
                 'email' => $email,
                 'handphone' => $phone,
-                'jenis_kelamin' => $jk,
                 'password' => $pass
             ];
             $insert = $this->Auth_model->register("users",$data);

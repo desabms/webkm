@@ -1,19 +1,11 @@
 <!-- Navbar-->
 
-            <?php
-                $errors = $this->session->flashdata('errors');
-                if(!empty($errors)){
-                ?>
-                <div class="row">
-                    <div class="col-md-12">
-                    <div class="alert alert-danger text-center">
-                        <?php foreach($errors as $key=>$error){ ?>
-                        <?php echo "$error<br>"; ?>
-                        <?php } ?>
-                    </div>
-                    </div>
-                </div>
-            <?php } ?>
+            <?php if ($this->session->flashdata('pesan-login')) { ?>
+		<div class="alert alert-warning alert-dismissible fade show">
+			<strong><?= $this->session->flashdata('pesan-login') ?> </strong>
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+		</div>
+	<?php } ?>
 
 <div class="container">
 <header class="header">
@@ -39,7 +31,7 @@
                 <u>Bootstrapious</u></a>
             </p> -->
         </div>
-
+	
         <!-- Registeration Form -->
         <div class="col-md-7 col-lg-5 ml-5">
             <form action="<?php echo base_url('auth/Login/proses_login'); ?>" method="post" enctype="multipart/form-data">
@@ -67,7 +59,7 @@
 
                     <!-- Submit Button -->
                     <div class="form-group col-lg-12 mx-auto mb-0">
-                        <Button type="submit" class="btn btn-primary btn-block py-2">
+                        <Button type="submit" class="btn btn-primary btn-block py-2" name="login">
                             <span class="font-weight-bold">Masuk</span>
                         </Button>
                     </div>

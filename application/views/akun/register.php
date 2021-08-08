@@ -62,7 +62,7 @@
                                 <i class="fa fa-user text-muted"></i>
                             </span>
                         </div>
-                        <input id="username" type="text" name="username" placeholder="username" class="form-control bg-white border-left-0 border-md">
+                        <input id="username" type="text"  name="username" placeholder="username"  class="form-control bg-white border-left-0 border-md">
                     </div>
 
                     <!-- Email Address -->
@@ -87,7 +87,7 @@
 
 
                     <!-- Job -->
-                    <div class="input-group col-lg-12 mb-4">
+                    <!-- <div class="input-group col-lg-12 mb-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-white px-4 border-md border-right-0">
                                 <i class="fa fa-black-tie text-muted"></i>
@@ -99,7 +99,7 @@
                             <option value="Perempuan">Perempuan</option>
                             
                         </select>
-                    </div>
+                    </div> -->
                     
                     <!-- Password -->
                     <div class="input-group col-lg-6 mb-4">

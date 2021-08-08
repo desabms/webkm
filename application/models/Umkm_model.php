@@ -54,7 +54,7 @@ class Umkm_model extends CI_Model{
             laporan.pendapatan,
             laporan.terlapor');
             $this->db->FROM('laporan');
-            $this->db->JOIN('pemilik','laporan.nik = pemilik.nik','left');
+            $this->db->JOIN('pemilik','laporan.id_pemilik = pemilik.id','left');
             $this->db->JOIN('umkm','laporan.id_umkm = umkm.id','left');
             // $this->db->GROUP_BY(');
             $this->db->JOIN('bidangusaha','laporan.kd_bidangusaha = bidangusaha.kd_bidangusaha','left');
@@ -65,10 +65,9 @@ class Umkm_model extends CI_Model{
     }
 
     function get_umkm(){
-        $this->db->SELECT('*
-            ');
+        $this->db->SELECT('*');
             $this->db->FROM('umkm');
-            $this->db->JOIN('pemilik','umkm.nik = pemilik.nik','left');
+            $this->db->JOIN('pemilik','umkm.id_pemilik = pemilik.id','left');
             $this->db->JOIN('bidangusaha','umkm.kd_bidangusaha = bidangusaha.kd_bidangusaha','left');
             $this->db->JOIN('tipeusaha','umkm.kd_tipeusaha = tipeusaha.kd_tipeusaha','left');
 
@@ -79,7 +78,7 @@ class Umkm_model extends CI_Model{
     public function getData_id($id){
         $this->db->SELECT('*');
         $this->db->FROM('umkm');
-        $this->db->JOIN('pemilik','umkm.nik = pemilik.nik','left');
+        $this->db->JOIN('pemilik','umkm.id_pemilik = pemilik.id','left');
         $this->db->JOIN('bidangusaha','umkm.kd_bidangusaha = bidangusaha.kd_bidangusaha','left');
         $this->db->WHERE('id',$id);
 

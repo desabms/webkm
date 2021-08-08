@@ -24,11 +24,14 @@ h2 {
 	color: #29AAE2;
 }
 a{
-    color:#3d84e6;
+    color:#ffffff;
 }
 a:hover, a:focus{
     color:#3d84e6;
     text-decoration: underline;
+}
+.dropdown-item {
+	color: rgb(255, 255, 255);
 }
 .navbar-toggle {
 	background-color: rgba(0, 0, 0, 0.89);

@@ -36,7 +36,7 @@
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Nama Usaha</label>
                             <div class="col-lg-9">
-                                <input class="form-control rounded" type="text" name="nama" placeholder="Nama Lengkap" required="">
+                                <input class="form-control rounded" type="text" name="nama" placeholder="Nama Usaha" required="">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -78,6 +78,12 @@
                             <label class="col-lg-3 col-form-label form-control-label">No.Telepon</label>
                             <div class="col-lg-9">
                                 <input type="text" name="tlpn" class="form-control rounded" placeholder="0821xxxxxxxx" required="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Jumlah Karyawan</label>
+                            <div class="col-lg-9">
+                                <input type="number" name="jmlh" class="form-control rounded" placeholder="Jumlah Karyawan" required="">
                             </div>
                         </div>
                         <div class="form-group row">

@@ -8,13 +8,13 @@ $(document).ready(function(){
 			var nik = $(this).val();
 
 			$.ajax({
-				type	: 'POST',
 				url 	: 'content/LaporanController.php',
+				type	: 'POST',
 				data 	: 'nik='+nik,
 				success	: function(data){
 					$('#pesan').html(data);
 				}
-			})
+			});
 
 		});
 	});
